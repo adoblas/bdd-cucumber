@@ -1,7 +1,11 @@
 package com.adoblas.cuke.stepDefintions.util;
 
+import com.ning.http.client.Response;
 import com.sun.jersey.api.client.ClientResponse;
 import org.springframework.test.context.ContextConfiguration;
+
+import java.io.IOException;
+import java.util.List;
 
 @ContextConfiguration("classpath:cucumber.xml")
 public class RestClientContext {

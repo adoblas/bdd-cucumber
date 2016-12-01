@@ -7,16 +7,17 @@ Feature: web Amazon search testing
     And I click on element having xpath '//*[@id="nav-search"]/form/div[2]/div/input'
     Then element having id "s-result-count" should have partial text as "<query>"
     Examples:
-      | query                 |
-      | simple                |
-      | 2                     |
-      | %20                   |
+      | query                     |
+      | simple                    |
+      | 2                         |
+      | %20                       |
+      | </span><span class="me">  |
 
   Scenario Outline: Amazon search bar button (without reults)
     Given I navigate to page 'www.amazon.co.uk'
     When I enter '<query>' into input field having id 'twotabsearchtextbox'
     And I click on element having xpath '//*[@id="nav-search"]/form/div[2]/div/input'
-    Then element having id "noResultsTitle" should have partial text as "<query>"
+    Then element having id "s-result-count" should have partial text as "<query>"
 
     Examples:
       | query                 |
@@ -26,7 +27,7 @@ Feature: web Amazon search testing
   Scenario Outline: Amazon search bar button (400 error - limit to 3257 chars)
     Given I navigate to page 'www.amazon.co.uk'
     When I enter '<query>' into input field having id 'twotabsearchtextbox'
-#TODO: define success step
+    Then element having id "noResultsTitle" should not have partial text as "<query>"
     Examples:
       | query                 |
       | sasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasassasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas |

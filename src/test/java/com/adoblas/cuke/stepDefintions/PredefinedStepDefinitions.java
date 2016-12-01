@@ -6,7 +6,8 @@ import methods.TestCaseFailed;
 import cucumber.api.java.en.Then;
 import env.BaseTest;
 
-public class PredefinedStepDefinitions implements BaseTest{
+public class PredefinedStepDefinitions implements BaseTest
+{
 	//Navigation Steps
 	
 		//Step to navigate to specified URL

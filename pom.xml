@@ -161,6 +161,18 @@
             <version>1.5.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.ning</groupId>
+            <artifactId>async-http-client</artifactId>
+            <version>1.9.30</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ning</groupId>
+            <artifactId>async-http-client</artifactId>
+            <version>1.9.30</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     

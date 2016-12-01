@@ -53,6 +53,11 @@ $ mvn clean install -DskipTests
 To run web tests
 ----------------
 
+Before running web tests, chromedriver instance must have execution permission.
+```
+$ chmod +x chromedriver
+```
+
 ```
 $ mvn clean install -Pweb
 ```

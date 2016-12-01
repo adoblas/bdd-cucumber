@@ -1,7 +1,6 @@
 package com.adoblas.cuke.stepDefintions.step;
 
 import com.adoblas.cuke.stepDefintions.util.RestClientContext;
-import cucumber.api.java.en.Given;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,12 +33,6 @@ public class CommonStepsDef {
     private Client client = new Client();
 
 
-    @Given("^I set base url to \"(.+)\"$")
-    public void setBaseUrl(String uri) {
-        WebResource webResource = client.resource(uri);
-        this.apiHost = uri;
-    }
-
     @When("^I send a GET request to \"(.+)\"$")
     public void iSendAGetRequestTo(String uri) {
         WebResource webResource = client.resource(apiHost + uri);
@@ -70,7 +63,7 @@ public class CommonStepsDef {
         }
     }
 
-    @And("^the JSON response should contain the value \"(.*?)\"$")
+    @Then("^the JSON response should contain the value \"(.*?)\"$")
     public void theJSONResponseShouldContainTheValue(String value){
         String entity = clientResponse.toString();
         try {
@@ -81,6 +74,15 @@ public class CommonStepsDef {
         }
     }
 
+    @Then("^the response should contain the text \"(.*?)\"$")
+    public void textResponseShouldContainTheValue(String value){
+        String entity = clientResponse.toString();
+        try {
+            assertThat(entity.contains(value));
+        } catch (Exception exception){
+            exception.printStackTrace();
+        }
+    }
 
 
 }
