@@ -6,8 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-//		plugin = {"html:target/cucumberHtmlReport"},
-		//pretty:target/cucumber-json-report.json
+		plugin = {"html:target/cucumberHtmlReport","pretty:target/cucumber-json-report.json"},
 		features = "src/test/resources/com/adoblas/cuke/features/wSearch.feature"
 )
 

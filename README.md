@@ -9,6 +9,8 @@ This framework supports automation of :
 - Web Browser Responsive Design with view ports configuration
 
 
+By default, running the tests will open a **chromedriver** instance. (which is located in the project base dir.)
+
 Tools & libraries
 =================
 The test automation framework is comprised of following tools and libraries  
@@ -25,7 +27,7 @@ Framework Setup steps
 ============================
 There are two profiles preconfigured in order to run the different scenarios. 
 
--Pweb and -Papi
+**-Pweb** and **-Papi**
 
 
 Information about profiles can be found in "pom.xml": 

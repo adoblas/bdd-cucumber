@@ -8,8 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class Env 
-{
+public class Env {
 	static WebDriver driver = null;
 	static String browserName = null;
 	
@@ -22,8 +21,7 @@ public class Env
 		return browserName;
 	}
 	
-	public static WebDriver CreateWebDriver(String browser)
-	{
+	public static WebDriver CreateWebDriver(String browser){
 			System.out.println("Browser: " + browser);
 
 			switch (browser.toLowerCase()) {

@@ -13,8 +13,7 @@ import methods.ScreenShotMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public interface BaseTest 
-{
+public interface BaseTest {
 	public static WebDriver driver = Env.CreateWebDriver(Env.getBrowserName());
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
 	
