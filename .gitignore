@@ -1,0 +1,6 @@
+/target
+/Screenshots
+.idea
+.settings
+*.log
+*.iml
