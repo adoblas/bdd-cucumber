@@ -52,6 +52,11 @@ public class CommonStepsDef {
         assertThatJson(restClientContext.getResponseJson()).when(Option.IGNORING_ARRAY_ORDER).isEqualTo(expected);
     }
 
+    @And("^I wait '(\\d)' seconds$")
+    public void conditionalWait(int wait) throws InterruptedException {
+        Thread.sleep(wait * 1000);
+    }
+
     @And("^the JSON response should contain the key \"(.*?)\" and value \"(.*?)\"$")
     public void theJSONResponseShouldContainTheKeyAndValue(String key, Object value) {
         String entity = clientResponse.toString();
