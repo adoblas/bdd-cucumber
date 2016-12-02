@@ -1,14 +1,14 @@
 Feature: api Amazon search testing
 
-  Scenario: Simple query
-    When I send a GET request to "s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=simple"
-    Then the response status should be 200
-    And the response should contain the text "Amazon.co.uk: simple"
-
-  Scenario: Number query
-    When I send a GET request to "s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=2"
-    Then the response status should be 200
-    And the response should contain the text "Amazon.co.uk: 2"
+#  Scenario: Simple query
+#    When I send a GET request to "s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=simple"
+#    Then the response status should be 200
+#    And the response should contain the text "Amazon.co.uk: simple"
+#
+#  Scenario: Number query
+#    When I send a GET request to "s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=2"
+#    Then the response status should be 200
+#    And the response should contain the text "Amazon.co.uk: 2"
 
   Scenario: Special char query
     When I send a GET request to "s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=$20"

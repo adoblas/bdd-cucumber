@@ -5,6 +5,7 @@ import java.io.IOException;
 import methods.TestCaseFailed;
 import cucumber.api.java.en.Then;
 import env.BaseTest;
+import org.openqa.selenium.NoSuchElementException;
 
 public class PredefinedStepDefinitions implements BaseTest
 {
@@ -178,15 +179,27 @@ public class PredefinedStepDefinitions implements BaseTest
 	@Then("^I should\\s*((?:not)?)\\s+see page title as \"(.+)\"$")
 	public void check_title(String present,String title) throws TestCaseFailed
 	{
-		//System.out.println("Present :" + present.isEmpty());
 		assertionObj.checkTitle(title,present.isEmpty());
+	}
+
+	/** page title checking
+	 * @param present :
+	 * @param type :
+	 * @param title :
+	 */
+	@Then("^I should\\s*((?:not)?)\\s+see element having  (.+) \"(.*?)\"$")
+	public void check_title(String present,String type, String title) throws TestCaseFailed
+	{
+		try{assertionObj.checkElementPresence(type,title,true);
+		} catch (TestCaseFailed notFound){
+		    System.out.print("Element nos found");
+        }
 	}
 	
 	// step to check element partial text
 	@Then("^I should\\s*((?:not)?)\\s+see page title having partial text as \"(.*?)\"$")
 	public void check_partial_text(String present, String partialTextTitle) throws TestCaseFailed
 	{
-		//System.out.println("Present :" + present.isEmpty());
 		assertionObj.checkPartialTitle(partialTextTitle, present.isEmpty());
 	}
 		
@@ -203,6 +216,7 @@ public class PredefinedStepDefinitions implements BaseTest
 	public void check_element_partial_text(String type,String accessName,String present,String value) throws Exception
 	{
 		miscmethodObj.validateLocator(type);
+		assertionObj.checkElementPresence(type,accessName,true);
 		assertionObj.checkElementPartialText(type, value, accessName, present.isEmpty());
 	}
 		  	
